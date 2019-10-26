@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
+    <title>Title</title>
+</head>
+<body>
+
+<header>
+    <h1>Оставьте свой отзыв</h1>
+    <p>Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
+</header>
+<div class="impression">
+    <form action="#">
+        <p>Ваше общее впечатление:</p>
+        <div class="item-impress">
+            <input type="radio" name="impress" id="positive">
+            <label for="positive">Скорее положительное</label>
+        </div>
+        <div class="item-impress">
+            <input type="radio" name="impress" id="negative">
+            <label for="negative">Скорее отрицательное</label>
+        </div>
+        <div class="item-impress">
+            <input type="radio" name="impress" id="neutral">
+            <label for="neutral">Затрудняюсь ответить</label>
+        </div>
+    </form>
+</div>
+<div class="introduce">
+    <form action="#">
+    <p>Представьтесь:</p>
+    <div class="item-intro">
+        <label for="name">Имя:*</label>
+        <input type="text" id="name" name="intro" placeholder="Полина">
+    </div>
+    <div class="item-intro">
+        <label for="surname">Фамилия:*</label>
+        <input type="text" id="surname" name="intro" placeholder="Скорая">
+    </div>
+    <div class="item-intro">
+        <label for="patronymic">Отчество:*</label>
+        <input type="text" id="patronymic" name="intro" placeholder="Николаевна">
+    </div>
+    </form>
+</div>
+<div class="contact-info">
+    <form action="#">
+        <p>Контактная информация:</p>
+        <div class="item-contact">
+            <label for="tel" >Телефон:*</label>
+            <input type="tel" id="tel" name="contact" placeholder="введите телефон">
+        </div>
+        <div class="item-contact">
+            <label for="email">Электронная почта:*</label>
+            <input type="email" id="email" name="contact" placeholder="введите email">
+        </div>
+    </form>
+</div>
+<div class="trip-details">
+    <form action="">
+        <p>Детали поездки:</p>
+        <div class="date">
+            <input type="date">
+        </div>
+        <select  id="country" name="country" >
+            <option value="none">Выберите страну</option>
+            <option value="Беларусь">Беларусь</option>
+            <option value="Италия">Италия</option>
+            <option value="Эстония">Эстония</option>
+        </select>
+
+        <div class="location">
+            <div>
+                <input type="checkbox" id="mountain">
+                <label for="mountain">Гора лысая</label>
+            </div>
+            <div>
+                <input type="checkbox" id="library">
+                <label for="library">Национальная библиотека</label>
+            </div>
+            <div>
+                <input type="checkbox" id="zoo">
+                <label for="zoo">Гродненсий зоопарк</label>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="gid-value">
+    <form action="#">
+        <p>Оцените качество услуг гида:</p>
+        <div>
+            <input type="checkbox" class="checkbox" id="native" />
+            <label for="native">На родном языке</label>
+        </div>
+        <div>
+            <input type="checkbox" class="checkbox" id="foreign" />
+            <label for="foreign">На языке посещенной страны</label>
+        </div>
+    </form>
+</div>
+<div class="gallery">
+    <p>Галерея</p>
+    <input type="file" multiple="false" accept="image/*" id="fInput" onchange="upload()">
+    <img src="" alt="">
+</div>
+<div class="emotions">
+    <p>Опишите свои эмоции</p>
+    <textarea name="emotion" id="em" cols="30" rows="10">
+    </textarea>
+</div>
+<button onclick="showDialog()">Отправить отзыв</button>
+<dialog id="review">
+    <h3>Спасибо, ИВАНОВ ПЕТР АЛЕКСАНДРОВИЧ, ваш отзыв отправлен!</h3>
+    <button onclick="closeDialog()">Закрыть окно</button>
+</dialog>
+<script src="main.js"></script>
+</body>
+</html>
