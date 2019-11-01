@@ -12,43 +12,54 @@
     <h1>Оставьте свой отзыв</h1>
     <p>Помогите нашим отелям стать лучше! Оставьте отзыв о них, а также о посещенных вами достопримечательностях</p>
 </header>
-<div class="impression">
-    <form action="#">
-        <p>Ваше общее впечатление:</p>
-        <div class="item-impress">
-            <input type="radio" name="impress" id="positive">
-            <label for="positive">Скорее положительное</label>
+<div class="container">
+    <div class="main-info">
+        <div class="impression">
+            <form action="#" name="impress">
+                <h2>Ваше общее впечатление:</h2>
+                <div class="item-impress">
+                    <input type="radio" name="impress" id="positive" value="100">
+                    <label for="positive">Положительное</label>
+                </div>
+                <div class="item-impress">
+                    <input type="radio" name="impress" id="sPositive" value="70">
+                    <label for="sPositive">Скорее положительное</label>
+                </div>
+                <div class="item-impress">
+                    <input type="radio" name="impress" id="negative" value="40">
+                    <label for="negative">Скорее отрицательное</label>
+                </div>
+                <div class="item-impress">
+                    <input type="radio" name="impress" id="neutral" value="0">
+                    <label for="neutral">Затрудняюсь ответить</label>
+                </div>
+                <p>Общее впечатление:</p>
+                <meter value="0" min="0" max="100" id="impressVal"></meter>
+                <p id="textVal"></p>
+            </form>
         </div>
-        <div class="item-impress">
-            <input type="radio" name="impress" id="negative">
-            <label for="negative">Скорее отрицательное</label>
+        <div class="introduce">
+            <form action="#">
+            <h2>Представьтесь:</h2>
+            <div class="item-intro">
+                <label for="name">Имя:*</label>
+                <input type="text" id="name" name="intro" value="Полина">
+            </div>
+            <div class="item-intro">
+                <label for="surname">Фамилия:*</label>
+                <input type="text" id="surname" name="intro" value="Скорая">
+            </div>
+            <div class="item-intro">
+                <label for="patronymic">Отчество:*</label>
+                <input type="text" id="patronymic" name="intro" value="Николаевна">
+            </div>
+            </form>
         </div>
-        <div class="item-impress">
-            <input type="radio" name="impress" id="neutral">
-            <label for="neutral">Затрудняюсь ответить</label>
-        </div>
-    </form>
-</div>
-<div class="introduce">
-    <form action="#">
-    <p>Представьтесь:</p>
-    <div class="item-intro">
-        <label for="name">Имя:*</label>
-        <input type="text" id="name" name="intro" placeholder="Полина">
     </div>
-    <div class="item-intro">
-        <label for="surname">Фамилия:*</label>
-        <input type="text" id="surname" name="intro" placeholder="Скорая">
-    </div>
-    <div class="item-intro">
-        <label for="patronymic">Отчество:*</label>
-        <input type="text" id="patronymic" name="intro" placeholder="Николаевна">
-    </div>
-    </form>
-</div>
 <div class="contact-info">
+    <h2>Контактная информация:</h2>
     <form action="#">
-        <p>Контактная информация:</p>
+        <div class="contact-items">
         <div class="item-contact">
             <label for="tel" >Телефон:*</label>
             <input type="tel" id="tel" name="contact" placeholder="введите телефон">
@@ -57,40 +68,66 @@
             <label for="email">Электронная почта:*</label>
             <input type="email" id="email" name="contact" placeholder="введите email">
         </div>
+        </div>
     </form>
 </div>
 <div class="trip-details">
     <form action="">
-        <p>Детали поездки:</p>
-        <div class="date">
-            <input type="date">
-        </div>
-        <select  id="country" name="country" >
-            <option value="none">Выберите страну</option>
-            <option value="Беларусь">Беларусь</option>
-            <option value="Италия">Италия</option>
-            <option value="Эстония">Эстония</option>
-        </select>
-
-        <div class="location">
-            <div>
-                <input type="checkbox" id="mountain">
-                <label for="mountain">Гора лысая</label>
+        <h2>Детали поездки:</h2>
+        <div class="trip-details-items">
+            <div class="date">
+                <input type="date">
             </div>
-            <div>
-                <input type="checkbox" id="library">
-                <label for="library">Национальная библиотека</label>
+            <div class="country">
+                <select  id="country" name="country" class="selectCountry">
+                    <option value="0" disabled selected>Выберите страну</option>
+                    <option value="1">Беларусь</option>
+                    <option value="2">Италия</option>
+                    <option value="3">Эстония</option>
+                </select>
             </div>
-            <div>
-                <input type="checkbox" id="zoo">
-                <label for="zoo">Гродненсий зоопарк</label>
+            <div class="location">
+                <div class="locations-Belarus" style="display: none">
+                    <div >
+                        <input type="checkbox" id="mountain">
+                        <label for="mountain">Гора лысая</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="library">
+                        <label for="library">Национальная библиотека</label>
+                    </div>
+                    <div id="divZoo">
+                        <input type="checkbox" id="zoo">
+                        <label for="zoo">Гродненсий зоопарк</label>
+                    </div>
+                </div>
+                <div class="locations-Italy" style="display: none">
+                    <div >
+                        <input type="checkbox" id="colloseum">
+                        <label for="colloseum">Колизей</label>
+                    </div>
+                    <div >
+                        <input type="checkbox" id="tower">
+                        <label for="tower">Пизанская башня</label>
+                    </div>
+                </div>
+                <div class="locations-Estonia" style="display: none">
+                    <div >
+                        <input type="checkbox" id="townHall">
+                        <label for="townHall">Ратуша</label>
+                    </div>
+                    <div >
+                        <input type="checkbox" id="lahemaa">
+                        <label for="lahemaa">Лахемаа</label>
+                    </div>
+                </div>
             </div>
         </div>
     </form>
 </div>
 <div class="gid-value">
     <form action="#">
-        <p>Оцените качество услуг гида:</p>
+        <h2>Оцените качество услуг гида:</h2>
         <div>
             <input type="checkbox" class="checkbox" id="native" />
             <label for="native">На родном языке</label>
@@ -102,20 +139,30 @@
     </form>
 </div>
 <div class="gallery">
-    <p>Галерея</p>
+    <h2>Галерея</h2>
     <input type="file" multiple="false" accept="image/*" id="fInput" onchange="upload()">
-    <img src="" alt="">
 </div>
 <div class="emotions">
-    <p>Опишите свои эмоции</p>
-    <textarea name="emotion" id="em" cols="30" rows="10">
-    </textarea>
+    <h2>Опишите свои эмоции</h2>
+    <div class="emotions-text">
+        <textarea name="emotion" id="em" cols="30" rows="10">
+        </textarea>
+    </div>
 </div>
-<button onclick="showDialog()">Отправить отзыв</button>
+    <span>
+        <button id="open">Отправить отзыв</button>
+    </span>
 <dialog id="review">
-    <h3>Спасибо, ИВАНОВ ПЕТР АЛЕКСАНДРОВИЧ, ваш отзыв отправлен!</h3>
-    <button onclick="closeDialog()">Закрыть окно</button>
+    <p id="thk">Спасибо, , ваш отзыв отправлен!</p>
+    <p id ="review-contacts">Контакты</p>
+    <p id = "review-data">Даты поездки</p>
+    <p id ="review-country">Страна визита</p>
+    <p id = "review-locations">Посещенные достопримечательности</p>
+    <p id = "review-gidVal">Оценка гида</p>
+    <p id="review-emotions">Эмоции от поездки</p>
+    <button id="close">Закрыть окно</button>
 </dialog>
 <script src="main.js"></script>
+</div>
 </body>
 </html>
